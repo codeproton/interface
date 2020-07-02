@@ -3,6 +3,7 @@ package io.king.view.provider;
 import io.king.core.api.cycle.LifeContext;
 import io.king.core.api.cycle.LifeCycle;
 import io.king.core.api.module.Module;
+import io.king.core.api.module.ModulePriority;
 import io.king.view.provider.command.ModuleView;
 import io.king.view.provider.time.TimeService;
 import io.king.view.provider.view.EntityGui;
@@ -12,6 +13,7 @@ import io.king.view.provider.view.ViewService;
         services = {
                 TimeService.class, EntityGui.class, ViewService.class
         },
+        priority = ModulePriority.SYSTEM,
         commands = {ModuleView.class},
         config = InterfaceConfig.class
 )
