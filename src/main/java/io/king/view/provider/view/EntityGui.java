@@ -16,6 +16,7 @@ import me.saiintbrisson.minecraft.view.View;
 import me.saiintbrisson.minecraft.view.ViewItem;
 import me.saiintbrisson.minecraft.view.ViewNode;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
 @Service
 @Injectable
@@ -32,7 +33,7 @@ public final class EntityGui extends View<ViewItemGui> {
     private PaginatedView<?> paginatedView;
 
     @Override
-    protected void render(ViewNode<ViewItemGui> node, ViewItemGui object) {
+    protected void render(ViewNode<ViewItemGui> node, Player player, ViewItemGui object) {
         final String[] information = getInformation(object);
 
         node.appendItem(new ViewItem<ViewItemGui>()
