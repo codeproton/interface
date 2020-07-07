@@ -10,16 +10,16 @@ import io.king.core.provider.module.ModuleObject;
 import io.king.core.provider.module.ModuleProps;
 import io.king.view.provider.time.TimeService;
 import lombok.Setter;
-import me.saiintbrisson.inventory.ItemBuilder;
-import me.saiintbrisson.inventory.inv.GUI;
-import me.saiintbrisson.inventory.inv.GUIItem;
-import me.saiintbrisson.inventory.inv.GUINode;
-import me.saiintbrisson.inventory.paginator.PaginatedView;
+import me.saiintbrisson.minecraft.ItemBuilder;
+import me.saiintbrisson.minecraft.paginator.PaginatedView;
+import me.saiintbrisson.minecraft.view.View;
+import me.saiintbrisson.minecraft.view.ViewItem;
+import me.saiintbrisson.minecraft.view.ViewNode;
 import org.bukkit.Material;
 
 @Service
 @Injectable
-public final class EntityGui extends GUI<ViewItem> {
+public final class EntityGui extends View<ViewItemGui> {
 
     @Inject
     private TimeService timeService;
@@ -32,10 +32,10 @@ public final class EntityGui extends GUI<ViewItem> {
     private PaginatedView<?> paginatedView;
 
     @Override
-    protected void render(GUINode<ViewItem> node, ViewItem object) {
+    protected void render(ViewNode<ViewItemGui> node, ViewItemGui object) {
         final String[] information = getInformation(object);
 
-        node.appendItem(new GUIItem<ViewItem>()
+        node.appendItem(new ViewItem<ViewItemGui>()
                 .withItem(new ItemBuilder(Material.PAPER)
                         .name("§cInformation about module")
                         .lore(information)
@@ -44,7 +44,7 @@ public final class EntityGui extends GUI<ViewItem> {
                 .updateOnClick()
         );
 
-        node.appendItem(new GUIItem<ViewItem>()
+        node.appendItem(new ViewItem<ViewItemGui>()
                 .withItem(new ItemBuilder(Material.BEACON)
                         .name("Back")
                         .build()
@@ -53,7 +53,7 @@ public final class EntityGui extends GUI<ViewItem> {
         );
     }
 
-    private String[] getInformation(ViewItem object) {
+    private String[] getInformation(ViewItemGui object) {
         final ModuleObject moduleObject = object.getModuleObject();
         final ModuleConfig moduleConfig = moduleObject.getModuleConfig();
         final ModuleProps moduleProps = moduleObject.getModuleProps();

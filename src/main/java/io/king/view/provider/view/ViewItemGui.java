@@ -5,16 +5,16 @@ import io.king.core.provider.module.ModuleObject;
 import io.king.core.provider.module.ModuleProps;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import me.saiintbrisson.inventory.ItemBuilder;
-import me.saiintbrisson.inventory.paginator.PaginatedItem;
-import me.saiintbrisson.inventory.paginator.PaginatedViewHolder;
+import me.saiintbrisson.minecraft.ItemBuilder;
+import me.saiintbrisson.minecraft.paginator.PaginatedItem;
+import me.saiintbrisson.minecraft.paginator.PaginatedViewHolder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 @Getter
 @RequiredArgsConstructor
-public final class ViewItem implements PaginatedItem {
+public final class ViewItemGui implements PaginatedItem {
 
     private final ModuleObject moduleObject;
 

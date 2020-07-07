@@ -2,8 +2,8 @@ package io.king.view.provider.command;
 
 import io.king.core.api.di.Inject;
 import io.king.view.provider.view.ModuleGui;
-import me.saiintbrisson.commands.Execution;
-import me.saiintbrisson.commands.annotations.Command;
+import me.saiintbrisson.minecraft.command.Execution;
+import me.saiintbrisson.minecraft.command.annotations.Command;
 import org.bukkit.entity.Player;
 
 public final class ModuleView {

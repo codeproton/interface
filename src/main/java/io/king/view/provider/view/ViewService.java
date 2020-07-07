@@ -20,9 +20,9 @@ public final class ViewService extends LifeCycle {
 
     @Override
     public void init(LifeContext context) {
-        final LinkedList<ViewItem> moduleList = new LinkedList<>();
+        final LinkedList<ViewItemGui> moduleList = new LinkedList<>();
         for (ModuleObject module : corePlugin.getModuleManager().getModules()) {
-            moduleList.add(new ViewItem(module));
+            moduleList.add(new ViewItemGui(module));
         }
 
         final ModuleGui moduleGui = new ModuleGui(corePlugin, entityGui, moduleList);
