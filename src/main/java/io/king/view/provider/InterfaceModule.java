@@ -2,10 +2,10 @@ package io.king.view.provider;
 
 import io.king.core.api.cycle.LifeContext;
 import io.king.core.api.cycle.LifeCycle;
-import io.king.core.api.module.ModuleConfig;
-import io.king.core.provider.cycle.event.ModuleInitialized;
 import io.king.core.api.module.Module;
+import io.king.core.api.module.ModuleConfig;
 import io.king.core.api.module.ModulePriority;
+import io.king.core.provider.cycle.event.ModuleInitialized;
 import io.king.view.provider.command.ModuleView;
 import io.king.view.provider.time.TimeService;
 import io.king.view.provider.view.EntityGui;

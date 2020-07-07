@@ -70,7 +70,7 @@ public final class EntityGui extends View<ViewItemGui> {
                 String.join(", ", strings);
 
         final long systemLoadTime = System.currentTimeMillis() - moduleProps.getLoadedAtTime();
-        final String formatTime = timeService.formatTime(systemLoadTime/1000);
+        final String formatTime = timeService.formatTime(systemLoadTime / 1000);
 
         return new String[]{
                 "",

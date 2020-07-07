@@ -10,10 +10,10 @@ public final class TimeService {
 
         for (TimeUnit value : TimeUnit.values()) {
             final long timeValue = value.convertTime(time);
-            if(timeValue < 1) continue;
+            if (timeValue < 1) continue;
 
             String name = value.name().toLowerCase();
-            if(timeValue > 1) name += "s";
+            if (timeValue > 1) name += "s";
 
             return builder.append(timeValue)
                     .append(" ")
